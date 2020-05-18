@@ -35,11 +35,12 @@ public class PracticalTest02MainActivity extends AppCompatActivity {
                     break;
                 case R.id.buttonRequest:
                     ClientAsyncTask task = new ClientAsyncTask(viewCurrencyValue);
-                    task.execute(editClientAddress.getText().toString(), editClientPort.getText().toString(), spinnerCurrencyType.getPrompt().toString());
+                    task.execute(editClientAddress.getText().toString(), editClientPort.getText().toString(), spinnerCurrencyType.getSelectedItem().toString());
                     break;
             }
         }
     }
+    ButtonListener blistener = new ButtonListener();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,9 @@ public class PracticalTest02MainActivity extends AppCompatActivity {
         buttonClientRequest = (Button) findViewById(R.id.buttonRequest);
 
         viewCurrencyValue = (TextView) findViewById(R.id.textViewValue);
+
+        buttonStartServer.setOnClickListener(blistener);
+        buttonClientRequest.setOnClickListener(blistener);
     }
 
     @Override

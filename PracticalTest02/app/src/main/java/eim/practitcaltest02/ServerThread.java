@@ -6,6 +6,8 @@ import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Dictionary;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ServerThread extends Thread {
     EditText serverPort;
@@ -13,7 +15,7 @@ public class ServerThread extends Thread {
 
     boolean isRunning = false;
 
-    Dictionary<String, String> cache;
+    Map<String, String> cache;
 
     public ServerThread(EditText serverPort) {
         this.serverPort = serverPort;
@@ -31,6 +33,7 @@ public class ServerThread extends Thread {
 
     @Override
     public void run() {
+        cache = new HashMap<String, String>();
         cache.put("updatedUSD", "");
         cache.put("updatedEUR", "");
 

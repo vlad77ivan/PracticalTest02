@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Dictionary;
+import java.util.Map;
 
 import cz.msebera.android.httpclient.client.HttpClient;
 import cz.msebera.android.httpclient.client.ResponseHandler;
@@ -17,9 +18,9 @@ import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 
 public class CommunicationThread extends Thread {
     Socket socket;
-    Dictionary<String, String> cache;
+    Map<String, String> cache;
 
-    public CommunicationThread(Socket socket, Dictionary<String, String> cache) {
+    public CommunicationThread(Socket socket, Map<String, String> cache) {
         this.socket = socket;
         this.cache = cache;
     }

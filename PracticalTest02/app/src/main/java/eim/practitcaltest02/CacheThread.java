@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.Dictionary;
+import java.util.Map;
 
 import cz.msebera.android.httpclient.client.HttpClient;
 import cz.msebera.android.httpclient.client.ResponseHandler;
@@ -16,11 +17,11 @@ import cz.msebera.android.httpclient.impl.client.BasicResponseHandler;
 import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
 
 public class CacheThread extends Thread {
-    Dictionary<String, String> cache;
+    Map<String, String> cache;
 
     boolean isRunning = false;
 
-    public CacheThread(Dictionary<String, String> cache) {
+    public CacheThread(Map<String, String> cache) {
         this.cache = cache;
     }
 
